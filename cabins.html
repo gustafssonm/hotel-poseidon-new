@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hotel Poseidon | Cabins</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f3f3f3",
+              "surface-container-highest": "#e2e2e2",
+              "primary-container": "#002349",
+              "on-primary-fixed-variant": "#2c476f",
+              "on-background": "#1a1c1c",
+              "on-tertiary-fixed-variant": "#4c463a",
+              "on-secondary-container": "#591d00",
+              "secondary": "#a43d00",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#d5e3ff",
+              "secondary-fixed-dim": "#ffb597",
+              "on-primary": "#ffffff",
+              "inverse-surface": "#2f3131",
+              "on-surface": "#1a1c1c",
+              "background": "#f9f9f9",
+              "outline": "#74777f",
+              "tertiary-container": "#272318",
+              "surface": "#f9f9f9",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#fd6c22",
+              "on-tertiary-container": "#918a7b",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#360f00",
+              "tertiary": "#110d05",
+              "surface-container": "#eeeeee",
+              "tertiary-fixed": "#ebe1d0",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#e8e8e8",
+              "tertiary-fixed-dim": "#cec6b5",
+              "on-primary-fixed": "#001b3c",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#adc8f6",
+              "secondary-fixed": "#ffdbcd",
+              "surface-variant": "#e2e2e2",
+              "outline-variant": "#c4c6cf",
+              "on-tertiary-fixed": "#1f1b11",
+              "on-primary-container": "#718bb7",
+              "surface-bright": "#f9f9f9",
+              "primary-fixed-dim": "#adc8f6",
+              "surface-tint": "#455f88",
+              "inverse-on-surface": "#f0f1f1",
+              "primary": "#000d22",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#43474e",
+              "on-secondary-fixed-variant": "#7d2d00",
+              "surface-dim": "#dadada"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary/30 antialiased">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white border-b border-surface-container">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <div class="flex items-center gap-1 md:gap-2">
+            <img alt="Hotel Poseidon Compass Logo" data-i18n="alt_logo" class="h-10 md:h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/d/1HcGX76b_XfI0avrv9vChzLuqlPRYwE3f" referrerPolicy="no-referrer"/>
+            <span class="font-serif italic text-sm md:text-xl text-primary whitespace-nowrap">Hotel Poseidon</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-4 lg:gap-8">
+            <a data-i18n="nav_ship" class="font-serif text-sm md:text-base font-medium tracking-[0.1em] lg:tracking-[0.2em] transition-colors duration-300 text-slate-700 hover:text-secondary" href="index.html">THE SHIP</a>
+            <a data-i18n="nav_cabins" class="font-serif text-sm md:text-base font-medium tracking-[0.1em] lg:tracking-[0.2em] transition-colors duration-300 text-secondary font-bold border-b border-secondary/30" href="cabins.html">CABINS</a>
+            <a data-i18n="nav_life" class="font-serif text-sm md:text-base font-medium tracking-[0.1em] lg:tracking-[0.2em] transition-colors duration-300 text-slate-700 hover:text-secondary" href="life.html">TERRACINA LIFE</a>
+            <a data-i18n="nav_voyage" class="font-serif text-sm md:text-base font-medium tracking-[0.1em] lg:tracking-[0.2em] transition-colors duration-300 text-slate-700 hover:text-secondary" href="voyage.html">VOYAGE</a>
+        </div>
+
+        <div class="flex items-center gap-4 md:gap-6">
+            <div class="hidden lg:flex items-center gap-8 font-label text-sm tracking-widest font-bold">
+                <a class="lang-link text-secondary border-b border-secondary" href="#" data-lang="en">EN</a>
+                <a class="lang-link text-slate-400 hover:text-primary transition-colors" href="#" data-lang="it">IT</a>
+                <a class="lang-link text-slate-400 hover:text-primary transition-colors" href="#" data-lang="se">SE</a>
+            </div>
+            <a data-i18n="book_now" href="https://booking.ericsoft.com/BookingEngine/book.aspx?idh=7B4DD5F39E0A7797" target="_blank" rel="noopener noreferrer" class="bg-secondary text-on-secondary px-4 md:px-8 py-2 md:py-3 rounded-sm font-label font-bold uppercase tracking-widest text-xs md:text-sm hover:opacity-90 transition-all duration-200 inline-block">
+                Book Now
+            </a>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-32 pb-24">
+    <!-- Hero Header -->
+    <header class="px-6 md:px-12 mb-20">
+        <div class="max-w-7xl mx-auto">
+            <span data-i18n="cabins_hero_subtitle" class="font-label text-secondary uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Nautical Boutique</span>
+            <h1 data-i18n="cabins_hero_title" class="text-5xl md:text-7xl font-headline font-bold leading-tight text-primary mb-8">
+                The Cabins
+            </h1>
+            <p data-i18n="cabins_hero_desc" class="font-body text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl">
+                Located <b>50m from the sea</b>, our spaces are designed as vessels of light and maritime poise.
+            </p>
+        </div>
+    </header>
+
+    <!-- Vessel Standards & Provisions -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 mb-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <span data-i18n="vessel_standards_title" class="font-label text-secondary uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Vessel Standards</span>
+                <h2 data-i18n="vessel_standards_desc" class="text-4xl md:text-5xl font-headline text-primary mb-12 leading-tight">
+                    Our interiors feature curated essentials and designer finishes, tailored for the modern voyager.
+                </h2>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary text-xl">ac_unit</span>
+                        <div>
+                            <h4 data-i18n="amenity_climate" class="font-bold text-[10px] uppercase tracking-widest text-primary mb-1">Independent Climate Control</h4>
+                            <p data-i18n="amenity_climate_sub" class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Heating & A/C</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary text-xl">kitchen</span>
+                        <div>
+                            <h4 data-i18n="spec_kitchen_val" class="font-bold text-[10px] uppercase tracking-widest text-primary mb-1">Private Kitchenette</h4>
+                            <p data-i18n="spec_kitchen_sub" class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Fully Equipped</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary text-xl">volume_off</span>
+                        <div>
+                            <h4 data-i18n="amenity_soundproof" class="font-bold text-[10px] uppercase tracking-widest text-primary mb-1">Soundproofing</h4>
+                            <p data-i18n="amenity_soundproof_sub" class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Peaceful Soundproofing</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary text-xl">lock</span>
+                        <div>
+                            <h4 data-i18n="amenity_safety" class="font-bold text-[10px] uppercase tracking-widest text-primary mb-1">Safety Box</h4>
+                            <p data-i18n="amenity_safety_sub" class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Secure Storage</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary text-xl">layers</span>
+                        <div>
+                            <h4 data-i18n="amenity_floor" class="font-bold text-[10px] uppercase tracking-widest text-primary mb-1">Marble/Tile floors</h4>
+                            <p data-i18n="amenity_floor_sub" class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Authentic Textures</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary text-xl">bathroom</span>
+                        <div>
+                            <h4 data-i18n="bath_private" class="font-bold text-[10px] uppercase tracking-widest text-primary mb-1">Private Bathroom</h4>
+                            <p data-i18n="bath_private_sub" class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Private Ensuite</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary text-xl">desk</span>
+                        <div>
+                            <h4 data-i18n="amenity_desk" class="font-bold text-[10px] uppercase tracking-widest text-primary mb-1">Desk & Workspace</h4>
+                            <p data-i18n="amenity_desk_sub" class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Integrated Design</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary text-xl">air</span>
+                        <div>
+                            <h4 data-i18n="bath_hairdryer" class="font-bold text-[10px] uppercase tracking-widest text-primary mb-1">Hairdryer & Wellness</h4>
+                            <p data-i18n="bath_hairdryer_sub" class="text-[10px] text-on-surface-variant uppercase tracking-tighter">In-room Comfort</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Breakfast Hook -->
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-sm blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative bg-primary-container p-10 md:p-16 rounded-sm text-white overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span class="material-symbols-outlined text-[12rem]">restaurant</span>
+                    </div>
+                    <span data-i18n="breakfast_subtitle" class="font-label text-secondary uppercase tracking-[0.4em] text-xs font-bold mb-8 block">Free Buffet Breakfast</span>
+                    <h3 data-i18n="breakfast_title" class="text-4xl md:text-5xl font-headline mb-10 leading-tight text-white">Complimentary Breakfast</h3>
+                    <p data-i18n="breakfast_desc" class="text-white font-body text-base md:text-xl leading-relaxed mb-12 font-medium">
+                        Start your voyage with our curated buffet breakfast, included with every stay. A selection of local flavors and international favorites served daily in our nautical dining hall.
+                    </p>
+                    <div class="flex items-center gap-6 border-t border-white/20 pt-10">
+                        <div class="w-12 h-12 rounded-full border border-secondary flex items-center justify-center bg-secondary/10">
+                            <span class="material-symbols-outlined text-secondary text-lg">anchor</span>
+                        </div>
+                        <span class="text-xs uppercase tracking-widest font-bold text-white">Included with every cabin registration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Vessel Collection -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 mb-32">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div class="max-w-2xl">
+                <span data-i18n="cabins_hero_subtitle" class="font-label text-secondary uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Nautical Boutique</span>
+                <h2 data-i18n="cabins_collection_title" class="text-5xl md:text-7xl font-headline text-primary leading-tight mb-8">The Vessel <br><i class="italic font-normal">Collection</i></h2>
+                <p data-i18n="cabins_view_logic" class="text-on-surface-variant font-body text-lg leading-relaxed italic">All rooms offer a peaceful garden orientation and feature a private furnished outdoor space, such as a patio or balcony, depending on their location.</p>
+            </div>
+            <div class="flex items-center gap-4 border-b border-surface-container pb-4">
+                <span class="material-symbols-outlined text-secondary">visibility</span>
+                <span data-i18n="spec_view_val" class="font-label text-xs uppercase tracking-widest font-bold text-on-surface-variant">Garden View</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-32">
+            <!-- Vessel 1: Standard -->
+            <div class="group flex flex-col h-full" data-gallery-group="standard">
+                <div class="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden mb-6 bg-surface-container cursor-pointer gallery-trigger" data-index="0">
+                    <img src="https://lh3.googleusercontent.com/d/18ZkJGdmxEH6QV4XpE40cXrKxUSkpuw90" alt="Standard Vessel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <!-- Breakfast Badge -->
+                    <div class="absolute top-6 left-6">
+                        <div class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2 border border-secondary/20">
+                            <span class="material-symbols-outlined text-secondary text-base">coffee</span>
+                            <span data-i18n="breakfast_included_label" class="text-[10px] uppercase tracking-widest font-bold text-primary">Breakfast Included</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 right-6">
+                        <div class="bg-white/90 backdrop-blur-sm p-3 rounded-sm shadow-2xl group-hover:bg-secondary group-hover:text-white transition-all">
+                            <span class="material-symbols-outlined text-sm">fullscreen</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thumbnail Row -->
+                <div class="grid grid-cols-4 gap-4 mb-10">
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="1">
+                        <img src="https://lh3.googleusercontent.com/d/1NhmwCqJZKyHQyapp0BD5Ut-OOLiHNmPr" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="2">
+                        <img src="https://lh3.googleusercontent.com/d/1mGtCZxkwyHUgz66ss8wRt4YEsnVfvA8h" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="3">
+                        <img src="https://lh3.googleusercontent.com/d/1HRC8Xz6kT_FWnKEuh7VMxydf49j6wqem" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="4">
+                        <img src="https://lh3.googleusercontent.com/d/1gxJDowqu9bupyuw-nYJzfz5A3hBv6b53" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+                <div class="flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span data-i18n="cabins_room1_deck" class="font-label text-secondary uppercase tracking-widest text-[10px] font-bold mb-3 block">Vessel Interior · Nautical Aesthetic</span>
+                            <h3 data-i18n="cabins_room1_title" class="text-4xl font-headline text-primary mb-4">Standard Double or Twin</h3>
+                        </div>
+                        <div class="text-right">
+                            <span data-i18n="spec_size_standard" class="block font-headline text-2xl text-primary">16m²</span>
+                            <span data-i18n="spec_size_label" class="block font-label text-[9px] uppercase tracking-widest font-bold text-on-surface-variant">Boutique Size</span>
+                        </div>
+                    </div>
+                    <p data-i18n="cabins_room1_note" class="text-on-surface-variant font-body text-base leading-relaxed mb-10 max-w-md">Versatile boutique comfort, thoughtfully designed for up to two guests.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-8 gap-y-4 pt-8 border-t border-surface-container">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">groups</span>
+                        <span data-i18n="spec_capacity_standard" class="text-xs uppercase tracking-widest font-bold text-primary">1-2 Guests</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">bed</span>
+                        <span class="text-xs uppercase tracking-widest font-bold text-primary">1 Large Double or 2 Twins</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">visibility</span>
+                        <span data-i18n="spec_view_val" class="text-xs uppercase tracking-widest font-bold text-primary">Garden View</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vessel 2: Triple -->
+            <div class="group flex flex-col h-full" data-gallery-group="triple">
+                <div class="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden mb-6 bg-surface-container cursor-pointer gallery-trigger" data-index="0">
+                    <img src="https://lh3.googleusercontent.com/d/121muKmJjC_e3BVPYNU4LxgQOqRvLRbNF" alt="Triple Vessel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <!-- Breakfast Badge -->
+                    <div class="absolute top-6 left-6">
+                        <div class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2 border border-secondary/20">
+                            <span class="material-symbols-outlined text-secondary text-base">coffee</span>
+                            <span data-i18n="breakfast_included_label" class="text-[10px] uppercase tracking-widest font-bold text-primary">Breakfast Included</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 right-6">
+                        <div class="bg-white/90 backdrop-blur-sm p-3 rounded-sm shadow-2xl group-hover:bg-secondary group-hover:text-white transition-all">
+                            <span class="material-symbols-outlined text-sm">fullscreen</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thumbnail Row -->
+                <div class="grid grid-cols-4 gap-4 mb-10">
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="1">
+                        <img src="https://lh3.googleusercontent.com/d/1lubAECqI4Ybj-vH3wSucqtJ8A7s--lb5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="2">
+                        <img src="https://lh3.googleusercontent.com/d/1scLtjeITPRzKFNzIV9umX7qY_qedyfZn" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="3">
+                        <img src="https://lh3.googleusercontent.com/d/1Ytu-b4RU5kT__MHUUP6VaPbOSKqb_DUj" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="4">
+                        <img src="https://lh3.googleusercontent.com/d/15jcohN3qQMCClo2GuTDIkGhNyzfmFC42" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <!-- Extra hidden images for lightbox -->
+                    <div class="hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1mGtCZxkwyHUgz66ss8wRt4YEsnVfvA8h">
+                        <img src="https://lh3.googleusercontent.com/d/1HRC8Xz6kT_FWnKEuh7VMxydf49j6wqem">
+                    </div>
+                </div>
+                <div class="flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span data-i18n="cabins_room2_deck" class="font-label text-secondary uppercase tracking-widest text-[10px] font-bold mb-3 block">Vessel Interior · Maritime History</span>
+                            <h3 data-i18n="cabins_room2_title" class="text-4xl font-headline text-primary mb-4">Triple Room</h3>
+                        </div>
+                        <div class="text-right">
+                            <span data-i18n="spec_size_triple" class="block font-headline text-2xl text-primary">17m²</span>
+                            <span data-i18n="spec_size_label" class="block font-label text-[9px] uppercase tracking-widest font-bold text-on-surface-variant">Boutique Size</span>
+                        </div>
+                    </div>
+                    <p data-i18n="cabins_room2_note" class="text-on-surface-variant font-body text-base leading-relaxed mb-10 max-w-md">Spacious boutique comfort, thoughtfully designed for up to three guests.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-8 gap-y-4 pt-8 border-t border-surface-container">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">groups</span>
+                        <span data-i18n="spec_capacity_triple" class="text-xs uppercase tracking-widest font-bold text-primary">3 Guests</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">bed</span>
+                        <span class="text-xs uppercase tracking-widest font-bold text-primary">1 Large Double + 1 Single</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">visibility</span>
+                        <span data-i18n="spec_view_val" class="text-xs uppercase tracking-widest font-bold text-primary">Garden View</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vessel 3: Family -->
+            <div class="group flex flex-col h-full" data-gallery-group="family">
+                <div class="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden mb-6 bg-surface-container cursor-pointer gallery-trigger" data-index="0">
+                    <img src="https://lh3.googleusercontent.com/d/121muKmJjC_e3BVPYNU4LxgQOqRvLRbNF" alt="Family Vessel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <!-- Breakfast Badge -->
+                    <div class="absolute top-6 left-6">
+                        <div class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2 border border-secondary/20">
+                            <span class="material-symbols-outlined text-secondary text-base">coffee</span>
+                            <span data-i18n="breakfast_included_label" class="text-[10px] uppercase tracking-widest font-bold text-primary">Breakfast Included</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 right-6">
+                        <div class="bg-white/90 backdrop-blur-sm p-3 rounded-sm shadow-2xl group-hover:bg-secondary group-hover:text-white transition-all">
+                            <span class="material-symbols-outlined text-sm">fullscreen</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thumbnail Row -->
+                <div class="grid grid-cols-4 gap-4 mb-10">
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="1">
+                        <img src="https://lh3.googleusercontent.com/d/1lubAECqI4Ybj-vH3wSucqtJ8A7s--lb5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="2">
+                        <img src="https://lh3.googleusercontent.com/d/1scLtjeITPRzKFNzIV9umX7qY_qedyfZn" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="3">
+                        <img src="https://lh3.googleusercontent.com/d/1Ytu-b4RU5kT__MHUUP6VaPbOSKqb_DUj" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+                <div class="flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span data-i18n="cabins_room3_deck" class="font-label text-secondary uppercase tracking-widest text-[10px] font-bold mb-3 block">Vessel Interior · Group Voyage</span>
+                            <h3 data-i18n="cabins_room3_title" class="text-4xl font-headline text-primary mb-4">Family Room</h3>
+                        </div>
+                        <div class="text-right">
+                            <span data-i18n="spec_size_standard" class="block font-headline text-2xl text-primary">16m²</span>
+                            <span data-i18n="spec_size_label" class="block font-label text-[9px] uppercase tracking-widest font-bold text-on-surface-variant">Boutique Size</span>
+                        </div>
+                    </div>
+                    <p data-i18n="cabins_room3_note" class="text-on-surface-variant font-body text-base leading-relaxed mb-4 max-w-md">Designed for young families, accommodating 2 adults and 2 children (up to 11 years old) in a maritime sanctuary.</p>
+                    <p data-i18n="cabins_family_disclaimer" class="text-on-surface-variant/60 font-body text-xs italic mb-10 max-w-md">Room style and finishes are identical to our Triple Rooms. Specific bedding includes 1 Large Double + 1 Nautical Bunk Bed (designed for children up to 11 years old).</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-8 gap-y-4 pt-8 border-t border-surface-container">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">family_restroom</span>
+                        <span data-i18n="spec_capacity_family" class="text-xs uppercase tracking-widest font-bold text-primary">2 Adults + 2 Kids</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">bed</span>
+                        <span data-i18n="spec_bedding_family" class="text-xs uppercase tracking-widest font-bold text-primary">BEDDING: 1 LARGE DOUBLE + 1 NAUTICAL BUNK BED</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">visibility</span>
+                        <span data-i18n="spec_view_val" class="text-xs uppercase tracking-widest font-bold text-primary">Garden View</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vessel 4: Accessible -->
+            <div class="group flex flex-col h-full" data-gallery-group="accessible">
+                <div class="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden mb-6 bg-surface-container cursor-pointer gallery-trigger" data-index="0">
+                    <img src="https://lh3.googleusercontent.com/d/18ZkJGdmxEH6QV4XpE40cXrKxUSkpuw90" alt="Accessible Vessel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <!-- Breakfast Badge -->
+                    <div class="absolute top-6 left-6">
+                        <div class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2 border border-secondary/20">
+                            <span class="material-symbols-outlined text-secondary text-base">coffee</span>
+                            <span data-i18n="breakfast_included_label" class="text-[10px] uppercase tracking-widest font-bold text-primary">Breakfast Included</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 right-6">
+                        <div class="bg-white/90 backdrop-blur-sm p-3 rounded-sm shadow-2xl group-hover:bg-secondary group-hover:text-white transition-all">
+                            <span class="material-symbols-outlined text-sm">fullscreen</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thumbnail Row -->
+                <div class="grid grid-cols-4 gap-4 mb-10">
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="1">
+                        <img src="https://lh3.googleusercontent.com/d/1NhmwCqJZKyHQyapp0BD5Ut-OOLiHNmPr" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden cursor-pointer gallery-trigger" data-index="2">
+                        <img src="https://lh3.googleusercontent.com/d/1GjNXZIP7hIc_EQmntqn0plqcJbFT_vaX" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+                <div class="flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span data-i18n="cabins_room4_deck" class="font-label text-secondary uppercase tracking-widest text-[10px] font-bold mb-3 block">Vessel Interior · Inclusive Design</span>
+                            <h3 data-i18n="cabins_room4_title" class="text-4xl font-headline text-primary mb-4">Accessible Room</h3>
+                        </div>
+                        <div class="text-right">
+                            <span data-i18n="spec_size_standard" class="block font-headline text-2xl text-primary">16m²</span>
+                            <span data-i18n="spec_size_label" class="block font-label text-[9px] uppercase tracking-widest font-bold text-on-surface-variant">Boutique Size</span>
+                        </div>
+                    </div>
+                    <p data-i18n="cabins_room4_note" class="text-on-surface-variant font-body text-base leading-relaxed mb-4 max-w-md">Thoughtfully adapted for accessibility without compromising on our high standard of boutique comfort.</p>
+                    <p data-i18n="cabins_accessible_disclaimer" class="text-on-surface-variant/60 font-body text-xs italic mb-10 max-w-md">Images represent the boutique room style. These specific units feature fully adapted accessibility bathrooms and ground-floor garden access.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-8 gap-y-4 pt-8 border-t border-surface-container">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">accessible</span>
+                        <span data-i18n="spec_capacity_accessible" class="text-xs uppercase tracking-widest font-bold text-primary">Accessible</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">visibility</span>
+                        <span data-i18n="spec_view_accessible" class="text-xs uppercase tracking-widest font-bold text-primary">Garden Patio View</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">layers</span>
+                        <span data-i18n="spec_floor_accessible" class="text-xs uppercase tracking-widest font-bold text-primary">Ground Floor (Step-Free Access)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maritime Rhythm Section -->
+    <section class="bg-white py-32 px-6 md:px-12 border-t border-surface-container">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex justify-center mb-12">
+                <span class="material-symbols-outlined text-secondary text-5xl">sailing</span>
+            </div>
+            <h2 data-i18n="rhythm_title" class="text-4xl md:text-6xl font-headline text-primary mb-24 max-w-4xl mx-auto leading-tight">
+                Created for those who seek the rhythm of the <i class="italic">Tyrrhenian Coast</i>.
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+                <div class="space-y-2">
+                    <span data-i18n="stat_sea_val" class="block text-4xl md:text-5xl font-headline text-primary">50m</span>
+                    <span data-i18n="stat_sea_label" class="block text-[10px] uppercase tracking-[0.2em] font-bold text-secondary">To the Sea</span>
+                </div>
+                <div class="space-y-2">
+                    <span data-i18n="stat_rooms_val" class="block text-4xl md:text-5xl font-headline text-primary">48</span>
+                    <span data-i18n="stat_rooms_label" class="block text-[10px] uppercase tracking-[0.2em] font-bold text-secondary">Boutique Rooms</span>
+                </div>
+                <div class="space-y-2">
+                    <span data-i18n="stat_service_val" class="block text-4xl md:text-5xl font-headline text-primary">24h</span>
+                    <span data-i18n="stat_service_label" class="block text-[10px] uppercase tracking-[0.2em] font-bold text-secondary">Deck Service</span>
+                </div>
+                <div class="space-y-2">
+                    <span data-i18n="stat_heritage_val" class="block text-4xl md:text-5xl font-headline text-primary">2001</span>
+                    <span data-i18n="stat_heritage_label" class="block text-[10px] uppercase tracking-[0.2em] font-bold text-secondary">Nautical Debut</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Journey -->
+    <section class="bg-white py-24">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 items-center">
+                <div class="md:col-span-2">
+                    <h2 data-i18n="journey_title" class="text-3xl md:text-4xl font-headline text-primary mb-6">The Guest Journey</h2>
+                    <p data-i18n="journey_desc" class="text-on-surface-variant font-body leading-relaxed max-w-2xl">
+                        Your stay at Hotel Poseidon is designed to be as seamless as the horizon. From the moment you step on board, you are part of a curated maritime experience.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="border-l-2 border-secondary pl-6">
+                        <span data-i18n="checkin_label" class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant block mb-1">Check-in</span>
+                        <span class="font-headline text-2xl text-primary">15:00</span>
+                    </div>
+                    <div class="border-l-2 border-secondary pl-6">
+                        <span data-i18n="checkout_label" class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant block mb-1">Check-out</span>
+                        <span class="font-headline text-2xl text-primary">10:30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white w-full py-24 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+        <!-- Brand Row -->
+        <div class="flex flex-col items-center md:flex-row md:items-center md:justify-start gap-6 mb-20">
+            <div class="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+                <img src="https://lh3.googleusercontent.com/d/1HcGX76b_XfI0avrv9vChzLuqlPRYwE3f" class="h-16 md:h-20 w-auto object-contain" referrerPolicy="no-referrer" />
+                <span class="font-serif italic text-4xl md:text-6xl text-primary whitespace-nowrap">Hotel Poseidon</span>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-16 mb-24">
+            <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-8">
+                <div class="space-y-4 text-on-surface-variant font-body text-base md:text-xl">
+                    <p data-i18n="footer_address" class="flex items-center gap-4 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-secondary text-xl md:text-2xl">location_on</span> Via Piemonte, Terracina, Italy
+                    </p>
+                    <p data-i18n="footer_phone" class="flex items-center gap-4 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-secondary text-xl md:text-2xl">call</span> +39 0773733660
+                    </p>
+                    <p data-i18n="footer_email" class="flex items-center gap-4 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-secondary text-xl md:text-2xl">mail</span> hotelposeidon@libero.it
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-16 md:gap-24">
+                <div class="flex flex-col gap-6">
+                    <h4 data-i18n="footer_nav" class="font-body font-bold text-xs uppercase tracking-[0.3em] text-primary mb-2">Navigation</h4>
+                    <a data-i18n="nav_ship" class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary transition-colors" href="index.html">The Ship</a>
+                    <a data-i18n="nav_cabins" class="font-body text-xs uppercase tracking-widest text-secondary font-bold" href="cabins.html">Cabins</a>
+                    <a data-i18n="nav_life" class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary transition-colors" href="life.html">Terracina Life</a>
+                    <a data-i18n="nav_voyage" class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary transition-colors" href="voyage.html">Voyage</a>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <h4 data-i18n="footer_legal" class="font-body font-bold text-xs uppercase tracking-[0.3em] text-primary mb-2">Legal</h4>
+                    <a data-i18n="footer_privacy" class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary transition-colors" href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-surface-container-low gap-8">
+            <p data-i18n="footer_copyright" class="font-body text-[9px] uppercase tracking-[0.3em] text-slate-400">
+                © 2026 HOTEL POSEIDON TERRACINA. TYRRHENIAN CURATOR.
+            </p>
+            <div class="flex gap-4">
+                <a class="text-primary hover:text-secondary transition-colors" href="https://www.instagram.com/hotelposeidonterracina/" target="_blank" rel="noopener noreferrer"><svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 0 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a>
+                <a class="text-primary hover:text-secondary transition-colors" href="https://www.facebook.com/hotelposeidonterracina/" target="_blank" rel="noopener noreferrer"><svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-12 hidden opacity-0 transition-opacity duration-300">
+    <button id="close-lightbox" class="absolute top-8 right-8 text-white hover:text-secondary transition-colors z-[110]">
+        <span class="material-symbols-outlined text-4xl">close</span>
+    </button>
+    
+    <button id="prev-lightbox" class="absolute left-4 md:left-8 text-white hover:text-secondary transition-colors z-[110]">
+        <span class="material-symbols-outlined text-5xl md:text-6xl">chevron_left</span>
+    </button>
+    
+    <button id="next-lightbox" class="absolute right-4 md:right-8 text-white hover:text-secondary transition-colors z-[110]">
+        <span class="material-symbols-outlined text-5xl md:text-6xl">chevron_right</span>
+    </button>
+
+    <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain shadow-2xl transition-transform duration-300" referrerPolicy="no-referrer">
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-lightbox');
+        const prevBtn = document.getElementById('prev-lightbox');
+        const nextBtn = document.getElementById('next-lightbox');
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        const openLightbox = (index, gallery) => {
+            currentGallery = gallery;
+            currentIndex = index;
+            updateLightbox();
+            lightbox.classList.remove('hidden');
+            setTimeout(() => lightbox.classList.add('opacity-100'), 10);
+            document.body.style.overflow = 'hidden';
+        };
+
+        const updateLightbox = () => {
+            lightboxImg.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                lightboxImg.src = currentGallery[currentIndex];
+                lightboxImg.style.transform = 'scale(1)';
+            }, 150);
+        };
+
+        const nextImage = () => {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateLightbox();
+        };
+
+        const prevImage = () => {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateLightbox();
+        };
+
+        document.querySelectorAll('.gallery-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                const group = trigger.closest('[data-gallery-group]');
+                const index = parseInt(trigger.getAttribute('data-index')) || 0;
+                
+                let gallery = [];
+                if (group) {
+                    // Find all images within the group (main + hidden)
+                    gallery = Array.from(group.querySelectorAll('img')).map(img => img.src);
+                } else {
+                    // Fallback
+                    gallery = [trigger.src || trigger.querySelector('img')?.src];
+                }
+                
+                if (gallery.length > 0) {
+                    openLightbox(index, gallery);
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('opacity-100');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nextImage();
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            prevImage();
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === lightboxImg) {
+                closeBtn.click();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'Escape') closeBtn.click();
+        });
+
+        // Simple swipe support
+        let touchStartX = 0;
+        lightbox.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+        lightbox.addEventListener('touchend', e => {
+            const touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) nextImage();
+            if (touchEndX - touchStartX > 50) prevImage();
+        });
+    });
+</script>
+<script src="src/i18n.js"></script>
+</body>
+</html>
