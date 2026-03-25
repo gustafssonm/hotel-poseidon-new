@@ -464,6 +464,7 @@ const translations = {
         "privacy_cookies_title": "5. Informativa sui Cookie",
         "privacy_cookies_desc": "Questo sito utilizza solo 'Cookie Tecnici' necessari al funzionamento. Non utilizziamo cookie di profilazione o tracciamento, pertanto non è richiesto un banner di consenso."
     },
+    },
     "se": {
         "nav_ship": "SKEPPET",
         "nav_cabins": "HYTTER",
