@@ -218,197 +218,211 @@
         <h2 data-i18n="gallery_title" class="font-headline text-5xl text-primary">Explore the Ship</h2>
     </div>
     
-    <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-10 px-6 md:px-12 pb-16">
-        <!-- 01: Aerial Pool View -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Aerial Pool View" class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/pool-aerial.jpg" referrerPolicy="no-referrer">
+    <div class="relative group/gallery px-6 md:px-12">
+        <!-- Navigation Buttons - Overlay Style -->
+        <button id="gallery-prev" class="absolute left-10 top-1/2 -translate-y-1/2 z-20 w-16 h-16 rounded-full bg-white/90 shadow-2xl flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-all duration-500 opacity-0 group-hover/gallery:opacity-100 hidden md:flex border border-stone-100">
+            <span class="material-symbols-outlined text-4xl">chevron_left</span>
+        </button>
+
+        <div id="ship-gallery" class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-10 pb-16">
+            <!-- 01: Aerial Pool View -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Aerial Pool View" class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/pool-aerial.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 02: Golden Hour Pool -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Golden Hour Pool" class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/pool-sunset.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 03: Flowers -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Vibrant pink flowers blooming on the white balconies of Hotel Poseidon." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/flowers.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 04: Garden/Patio -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Lush green garden and patio area leading to the Hotel Poseidon pool." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/garden.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 05: Architecture Detail -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Close-up architectural detail of the ship-inspired stone facade." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/facade.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 06: Pool Detail 1 -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Close-up of the crystal clear Hotel Poseidon swimming pool." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/pool-water.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 07: Pool Detail 2 -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Reflections on the water at the luxury Hotel Poseidon pool." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/reflections.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 08: Pool Lounge -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Elegant sun loungers and umbrellas by the ship-inspired pool." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/loungers.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 09: Pool Wide View -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Wide view of the Hotel Poseidon pool area and ship architecture." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/pool-wide.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 10: Reception Desk -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="The elegant marble reception desk at Hotel Poseidon." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/reception.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 11: Lobby Detail -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Sophisticated lobby interior with ship-inspired design elements." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/lobby-detail.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 12: Service Area -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Welcoming guest service area at the heart of the ship." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/service.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 13: Entrance Interior -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Interior view of the main entrance leading into the luxury lobby." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/entrance.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 14: Modern Lounge -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Chic modern lounge area at Hotel Poseidon with nautical design." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/lounge-modern.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 15: Bar Interior -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="The sophisticated bar at Hotel Poseidon, perfect for evening cocktails." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/bar.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 16: Terrace View -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Elegant terrace seating with views of the Terracina coast." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/terrace.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 17: Interior Transition -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Modern staircase with glass railings and indoor plants at Hotel Poseidon." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/stairs.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 18: Double Cabin -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Bright and modern double room with clean white linens." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-double.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 19: Triple Cabin -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Spacious triple room configuration for families." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-triple.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 20: Room Entrance -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Guest room entrance with private balcony access." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-sun.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 21: Modern Bathroom -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Updated bathroom with contemporary fixtures and tiling." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/bathroom.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 22: Twin Cabin -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Comfortable twin room with two separate beds." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-twin.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 23: Functional Space -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Desk and storage area in a well-appointed guest room." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-desk.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 24: Double Layout -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Contemporary double room with natural light." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-layout.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 25: Room Detail -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Modern furniture and nautical-inspired decor." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-decor.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 26: Triple Room (Corrected Path) -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Flexible triple room layout for group travelers." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-triple.jpg" referrerPolicy="no-referrer">
+                </div>
+            </div>
+
+            <!-- 27: Window Light -->
+            <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
+                <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
+                    <img alt="Sun-drenched guest room highlighting the ship architecture." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-sun.jpg" referrerPolicy="no-referrer">
+                </div>
             </div>
         </div>
 
-        <!-- 02: Golden Hour Pool -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Golden Hour Pool" class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/pool-sunset.jpg" referrerPolicy="no-referrer">
-            </div>
+        <button id="gallery-next" class="absolute right-10 top-1/2 -translate-y-1/2 z-20 w-16 h-16 rounded-full bg-white/90 shadow-2xl flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-all duration-500 opacity-0 group-hover/gallery:opacity-100 hidden md:flex border border-stone-100">
+            <span class="material-symbols-outlined text-4xl">chevron_right</span>
+        </button>
+        
+        <!-- Scroll Progress Bar -->
+        <div class="mt-4 h-1 w-full bg-stone-100 rounded-full overflow-hidden">
+            <div id="gallery-progress" class="h-full bg-secondary w-0 transition-all duration-300"></div>
         </div>
-
-        <!-- 03: Flowers -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Vibrant pink flowers blooming on the white balconies of Hotel Poseidon." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/flowers.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 04: Garden/Patio -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Lush green garden and patio area leading to the Hotel Poseidon pool." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/garden.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 05: Architecture Detail -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Close-up architectural detail of the ship-inspired stone facade." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/facade.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 06: Pool Detail 1 -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Close-up of the crystal clear Hotel Poseidon swimming pool." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/pool-water.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 07: Pool Detail 2 -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Reflections on the water at the luxury Hotel Poseidon pool." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/reflections.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 08: Pool Lounge -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Elegant sun loungers and umbrellas by the ship-inspired pool." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/loungers.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 09: Pool Wide View -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Wide view of the Hotel Poseidon pool area and ship architecture." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/pool-wide.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 10: Reception Desk -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="The elegant marble reception desk at Hotel Poseidon." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/reception.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 11: Lobby Detail -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Sophisticated lobby interior with ship-inspired design elements." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/lobby-detail.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 12: Service Area -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Welcoming guest service area at the heart of the ship." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/service.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 13: Entrance Interior -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Interior view of the main entrance leading into the luxury lobby." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/entrance.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 14: Modern Lounge -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Chic modern lounge area at Hotel Poseidon with nautical design." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/lounge-modern.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 15: Bar Interior -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="The sophisticated bar at Hotel Poseidon, perfect for evening cocktails." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/bar.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 16: Terrace View -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Elegant terrace seating with views of the Terracina coast." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/terrace.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 17: Interior Transition -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Modern staircase with glass railings and indoor plants at Hotel Poseidon." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/stairs.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 18: Double Cabin -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Bright and modern double room with clean white linens." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-double.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 19: Triple Cabin -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Spacious triple room configuration for families." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-triple.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 20: Room Entrance -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Guest room entrance with private balcony access." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-sun.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 21: Modern Bathroom -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Updated bathroom with contemporary fixtures and tiling." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/bathroom.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 22: Twin Cabin -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Comfortable twin room with two separate beds." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-twin.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 23: Functional Space -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Desk and storage area in a well-appointed guest room." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-desk.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 24: Double Layout -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Contemporary double room with natural light." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-layout.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 25: Room Detail -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Modern furniture and nautical-inspired decor." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-decor.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 26: Triple Room -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Flexible triple room layout for group travelers." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-triple.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-        <!-- 27: Window Light -->
-        <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
-            <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
-                <img alt="Sun-drenched guest room highlighting the ship architecture." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-sun.jpg" referrerPolicy="no-referrer">
-            </div>
-        </div>
-
-    </div>
     </div>
 </section>
 
@@ -466,5 +480,11 @@
 </footer>
 </main>
 <script src="src/i18n.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const gallery = document.getElementById('ship-gallery');
+        ... (the rest of the code you just showed me) ...
+    });
+</script>
 </body>
 </html>
