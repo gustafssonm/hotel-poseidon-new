@@ -482,8 +482,56 @@
 <script src="src/i18n.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const gallery = document.getElementById('ship-gallery');
-        ... (the rest of the code you just showed me) ...
+        // These MUST match the 'id' names in your HTML section above
+        const gallery = document.getElementById('shipGallery');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('gallery-progress');
+
+        if (gallery && prevBtn && nextBtn) {
+            // How far to jump when clicking a button
+            const getScrollAmount = () => {
+                const firstItem = gallery.firstElementChild;
+                return firstItem ? firstItem.offsetWidth + 40 : 500;
+            };
+
+            // Button Click Listeners
+            prevBtn.addEventListener('click', () => {
+                gallery.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                gallery.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+
+            // This function handles the "fading" and the progress bar
+            const updateUI = () => {
+                const scrollLeft = gallery.scrollLeft;
+                const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+                
+                // Update the Progress Bar
+                if (progressBar && maxScroll > 0) {
+                    progressBar.style.width = `${(scrollLeft / maxScroll) * 100}%`;
+                }
+
+                // If at the start, fade the left arrow (0.1 opacity)
+                const isAtStart = scrollLeft <= 10;
+                prevBtn.style.opacity = isAtStart ? '0.1' : '1';
+                prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+
+                // If at the end, fade the right arrow (0.1 opacity)
+                const isAtEnd = scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 20;
+                nextBtn.style.opacity = isAtEnd ? '0.1' : '1';
+                nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+            };
+
+            // Listen for scrolling and window resizing
+            gallery.addEventListener('scroll', updateUI);
+            window.addEventListener('resize', updateUI);
+            
+            // Run once at the start to turn the right button ON
+            setTimeout(updateUI, 200);
+        }
     });
 </script>
 </body>
