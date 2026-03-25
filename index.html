@@ -400,7 +400,7 @@
                 </div>
             </div>
 
-            <!-- 26: Triple Room (Corrected Path) -->
+            <!-- 26: Triple Room -->
             <div class="flex-none w-[85vw] md:w-[65vw] lg:w-[55vw] snap-start group">
                 <div class="relative overflow-hidden bg-stone-100 border-b-2 border-secondary shadow-2xl">
                     <img alt="Flexible triple room layout for group travelers." class="w-full aspect-[16/10] object-cover hover:scale-110 transition-transform duration-[2000ms] ease-out" src="assets/room-triple.jpg" referrerPolicy="no-referrer">
@@ -482,20 +482,17 @@
 <script src="src/i18n.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // These MUST match the 'id' names in your HTML section above
-        const gallery = document.getElementById('shipGallery');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
+        const gallery = document.getElementById('ship-gallery');
+        const prevBtn = document.getElementById('gallery-prev');
+        const nextBtn = document.getElementById('gallery-next');
         const progressBar = document.getElementById('gallery-progress');
 
         if (gallery && prevBtn && nextBtn) {
-            // How far to jump when clicking a button
             const getScrollAmount = () => {
                 const firstItem = gallery.firstElementChild;
                 return firstItem ? firstItem.offsetWidth + 40 : 500;
             };
 
-            // Button Click Listeners
             prevBtn.addEventListener('click', () => {
                 gallery.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
             });
@@ -504,33 +501,25 @@
                 gallery.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
             });
 
-            // This function handles the "fading" and the progress bar
             const updateUI = () => {
                 const scrollLeft = gallery.scrollLeft;
                 const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-                
-                // Update the Progress Bar
                 if (progressBar && maxScroll > 0) {
                     progressBar.style.width = `${(scrollLeft / maxScroll) * 100}%`;
                 }
-
-                // If at the start, fade the left arrow (0.1 opacity)
+                
                 const isAtStart = scrollLeft <= 10;
+                const isAtEnd = scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 20;
+
                 prevBtn.style.opacity = isAtStart ? '0.1' : '1';
                 prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
-
-                // If at the end, fade the right arrow (0.1 opacity)
-                const isAtEnd = scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 20;
                 nextBtn.style.opacity = isAtEnd ? '0.1' : '1';
                 nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
             };
 
-            // Listen for scrolling and window resizing
             gallery.addEventListener('scroll', updateUI);
             window.addEventListener('resize', updateUI);
-            
-            // Run once at the start to turn the right button ON
-            setTimeout(updateUI, 200);
+            setTimeout(updateUI, 100);
         }
     });
 </script>
