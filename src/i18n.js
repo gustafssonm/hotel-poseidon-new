@@ -452,6 +452,17 @@ const translations = {
         "alt_gallery_pool_dining": "Area pranzo all'aperto a bordo piscina",
         "alt_gallery_bar": "Il bar dell'Hotel Poseidon",
         "life_location_address": "Via Piemonte 04019 Terracina<br>Italia"
+        "privacy_title": "Informativa sulla Privacy e sui Cookie",
+        "privacy_data_types_title": "1. Tipologie di Dati Raccolti",
+        "privacy_data_types_desc": "Raccogliamo solo le informazioni necessarie per fornire i nostri servizi, inclusi dati identificativi, documentazione legale per la registrazione degli ospiti e dati tecnici di navigazione.",
+        "privacy_purpose_title": "2. Finalità e Base Giuridica",
+        "privacy_purpose_desc": "Trattiamo i vostri dati per necessità contrattuali (gestione prenotazioni), obblighi di legge (comunicazione alla Polizia di Stato tramite Alloggiati Web) e scopi amministrativi e fiscali.",
+        "privacy_retention_title": "3. Conservazione dei Dati",
+        "privacy_retention_desc": "I vostri dati saranno conservati solo per il tempo necessario: 5 anni per i record di polizia e 10 anni per i record fiscali, come richiesto dalla legge italiana.",
+        "privacy_rights_title": "4. I Vostri Diritti",
+        "privacy_rights_desc": "Ai sensi del GDPR, avete il diritto di accedere, rettificare o richiedere la cancellazione dei vostri dati personali contattandoci via email.",
+        "privacy_cookies_title": "5. Informativa sui Cookie",
+        "privacy_cookies_desc": "Questo sito utilizza solo 'Cookie Tecnici' necessari al funzionamento. Non utilizziamo cookie di profilazione o tracciamento, pertanto non è richiesto un banner di consenso."
     },
     "se": {
         "nav_ship": "SKEPPET",
