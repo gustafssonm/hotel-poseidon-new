@@ -96,10 +96,10 @@
 <nav class="fixed top-0 w-full z-50 bg-white border-b border-surface-container">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <div class="flex items-center gap-1 md:gap-2">
-            <img alt="Hotel Poseidon Compass Logo" data-i18n="alt_logo" class="h-10 md:h-12 w-auto object-contain" src="assets/logo.png" />
+            <img alt="Hotel Poseidon Compass Logo" data-i18n="alt_logo" class="h-10 md:h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/d/1HcGX76b_XfI0avrv9vChzLuqlPRYwE3f" referrerPolicy="no-referrer"/>
             <span class="font-serif italic text-sm md:text-xl text-primary whitespace-nowrap">Hotel Poseidon</span>
         </div>
-
+        
         <div class="hidden md:flex items-center gap-4 lg:gap-8">
             <a data-i18n="nav_ship" class="font-serif text-sm md:text-base font-medium tracking-[0.1em] lg:tracking-[0.2em] transition-colors duration-300 text-secondary font-bold border-b border-secondary/30" href="index.html">THE SHIP</a>
             <a data-i18n="nav_cabins" class="font-serif text-sm md:text-base font-medium tracking-[0.1em] lg:tracking-[0.2em] transition-colors duration-300 text-slate-700 hover:text-secondary" href="cabins.html">CABINS</a>
@@ -107,40 +107,44 @@
             <a data-i18n="nav_voyage" class="font-serif text-sm md:text-base font-medium tracking-[0.1em] lg:tracking-[0.2em] transition-colors duration-300 text-slate-700 hover:text-secondary" href="voyage.html">VOYAGE</a>
         </div>
 
-        <div class="flex items-center gap-4 md:gap-6">
-            <div class="hidden lg:flex items-center gap-8 font-label text-sm tracking-widest font-bold">
+        <div class="flex items-center gap-3 md:gap-6">
+            <div class="hidden md:flex items-center gap-4 md:gap-8 font-label text-[10px] md:text-sm tracking-widest font-bold">
                 <a class="lang-link text-secondary border-b border-secondary" href="#" data-lang="en">EN</a>
-                <a class="lang-link text-slate-400 hover:text-primary" href="#" data-lang="it">IT</a>
-                <a class="lang-link text-slate-400 hover:text-primary" href="#" data-lang="se">SE</a>
+                <a class="lang-link text-slate-400 hover:text-primary transition-colors" href="#" data-lang="it">IT</a>
+                <a class="lang-link text-slate-400 hover:text-primary transition-colors" href="#" data-lang="se">SE</a>
             </div>
             
-            <a data-i18n="book_now" href="https://booking.ericsoft.com/BookingEngine/book.aspx?idh=7B4DD5F39E0A7797" target="_blank" class="bg-secondary text-on-secondary px-4 md:px-8 py-2 md:py-3 rounded-sm font-label font-bold uppercase tracking-widest text-xs md:text-sm">Book Now</a>
-            
-            <button id="menu-toggle" class="md:hidden text-primary">
-                <span class="material-symbols-outlined text-3xl">menu</span>
+            <a data-i18n="book_now" href="https://booking.ericsoft.com/BookingEngine/book.aspx?idh=7B4DD5F39E0A7797" target="_blank" rel="noopener noreferrer" class="bg-secondary text-on-secondary px-3 py-2 md:px-8 md:py-3 rounded-sm font-label font-bold uppercase tracking-widest text-[10px] md:text-sm hover:opacity-90 transition-all duration-200">
+                Book Now
+            </a>
+
+            <button id="mobile-menu-toggle" class="md:hidden text-primary flex items-center" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-2xl">menu</span>
             </button>
         </div>
     </div>
 
-<div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col p-8 transition-transform duration-300 translate-x-full md:hidden pointer-events-none">        <div class="flex justify-end mb-8">
-            <button id="menu-close" class="text-primary">
-                <span class="material-symbols-outlined text-4xl">close</span>
-            </button>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden transition-transform duration-300 translate-x-full">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 text-primary">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        <div class="flex flex-col items-center gap-6">
+            <a data-i18n="nav_ship" class="font-serif text-xl font-medium tracking-widest text-secondary font-bold" href="index.html">THE SHIP</a>
+            <a data-i18n="nav_cabins" class="font-serif text-xl font-medium tracking-widest text-slate-700 hover:text-secondary" href="cabins.html">CABINS</a>
+            <a data-i18n="nav_life" class="font-serif text-xl font-medium tracking-widest text-slate-700 hover:text-secondary" href="life.html">TERRACINA LIFE</a>
+            <a data-i18n="nav_voyage" class="font-serif text-xl font-medium tracking-widest text-slate-700 hover:text-secondary" href="voyage.html">VOYAGE</a>
         </div>
-        <div class="flex flex-col gap-8 items-center text-center">
-            <a href="index.html" class="font-serif text-xl text-secondary font-bold">THE SHIP</a>
-            <a href="cabins.html" class="font-serif text-xl text-slate-700">CABINS</a>
-            <a href="life.html" class="font-serif text-xl text-slate-700">TERRACINA LIFE</a>
-            <a href="voyage.html" class="font-serif text-xl text-slate-700">VOYAGE</a>
-            
-            <div class="h-px w-12 bg-slate-200 my-4"></div>
-            
-            <div class="flex gap-8 font-label text-sm font-bold">
-                <a class="lang-link text-secondary" href="#" data-lang="en">EN</a>
-                <a class="lang-link text-slate-400" href="#" data-lang="it">IT</a>
-                <a class="lang-link text-slate-400" href="#" data-lang="se">SE</a>
-            </div>
+        
+        <div class="flex items-center gap-8 font-label text-lg tracking-widest font-bold mt-12">
+            <a class="lang-link text-secondary border-b border-secondary" href="#" data-lang="en">EN</a>
+            <a class="lang-link text-slate-400 hover:text-primary transition-colors" href="#" data-lang="it">IT</a>
+            <a class="lang-link text-slate-400 hover:text-primary transition-colors" href="#" data-lang="se">SE</a>
         </div>
+
+        <a data-i18n="book_now" href="https://booking.ericsoft.com/BookingEngine/book.aspx?idh=7B4DD5F39E0A7797" target="_blank" rel="noopener noreferrer" class="mt-8 bg-secondary text-on-secondary px-12 py-4 rounded-sm font-label font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-all duration-200">
+            Book Now
+        </a>
     </div>
 </nav>
 
