@@ -641,6 +641,36 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // --- 1. MOBILE MENU LOGIC (The part you were missing) ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const body = document.body;
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                // This makes the menu slide in and becomes clickable
+                mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+                mobileMenu.classList.add('pointer-events-auto');
+                body.style.overflow = 'hidden'; 
+            });
+
+            const closeMenu = () => {
+                // This makes the menu slide out and stops it from blocking clicks
+                mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+                mobileMenu.classList.remove('pointer-events-auto');
+                body.style.overflow = ''; 
+            };
+
+            if (menuClose) menuClose.addEventListener('click', closeMenu);
+            
+            // Close menu if a link inside it is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+
+        // --- 2. LIGHTBOX LOGIC (Keeping your photos working) ---
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.getElementById('close-lightbox');
@@ -656,7 +686,7 @@
             updateLightbox();
             lightbox.classList.remove('hidden');
             setTimeout(() => lightbox.classList.add('opacity-100'), 10);
-            document.body.style.overflow = 'hidden';
+            body.style.overflow = 'hidden';
         };
 
         const updateLightbox = () => {
@@ -681,44 +711,29 @@
             trigger.addEventListener('click', (e) => {
                 const group = trigger.closest('[data-gallery-group]');
                 const index = parseInt(trigger.getAttribute('data-index')) || 0;
-                
                 let gallery = [];
                 if (group) {
-                    // Find all images within the group (main + hidden)
                     gallery = Array.from(group.querySelectorAll('img')).map(img => img.src);
                 } else {
-                    // Fallback
                     gallery = [trigger.src || trigger.querySelector('img')?.src];
                 }
-                
-                if (gallery.length > 0) {
-                    openLightbox(index, gallery);
-                }
+                if (gallery.length > 0) openLightbox(index, gallery);
             });
         });
 
-        closeBtn.addEventListener('click', () => {
+        if (closeBtn) closeBtn.addEventListener('click', () => {
             lightbox.classList.remove('opacity-100');
             setTimeout(() => {
                 lightbox.classList.add('hidden');
-                document.body.style.overflow = '';
+                body.style.overflow = '';
             }, 300);
         });
 
-        nextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            nextImage();
-        });
-
-        prevBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            prevImage();
-        });
+        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
 
         lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox || e.target === lightboxImg) {
-                closeBtn.click();
-            }
+            if (e.target === lightbox || e.target === lightboxImg) closeBtn.click();
         });
 
         document.addEventListener('keydown', (e) => {
@@ -728,7 +743,6 @@
             if (e.key === 'Escape') closeBtn.click();
         });
 
-        // Simple swipe support
         let touchStartX = 0;
         lightbox.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
         lightbox.addEventListener('touchend', e => {
@@ -738,6 +752,7 @@
         });
     });
 </script>
+ 
 <script src="src/i18n.js"></script>
 </body>
 </html>
