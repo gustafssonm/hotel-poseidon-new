@@ -514,57 +514,55 @@
 </main>
 <script src="src/i18n.js"></script>
 <script>
-   // Gallery Navigation Logic
     document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Menu Toggle Logic
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        // --- 1. MOBILE MENU LOGIC ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
+        const body = document.body;
 
-        if (mobileMenuToggle && mobileMenuClose && mobileMenu) {
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-full');
+        if (menuToggle && menuClose && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                // Remove 'none' and add 'auto' so links are clickable
+                mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+                mobileMenu.classList.add('pointer-events-auto');
+                body.style.overflow = 'hidden'; 
             });
 
-            mobileMenuClose.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
-            });
+            const closeMenu = () => {
+                // Add 'none' back so the invisible box stops blocking the screen
+                mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+                mobileMenu.classList.remove('pointer-events-auto');
+                body.style.overflow = ''; 
+            };
 
-            // Close menu when clicking on a link
+            menuClose.addEventListener('click', closeMenu);
+
             const mobileLinks = mobileMenu.querySelectorAll('a');
             mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('translate-x-full');
-                });
+                link.addEventListener('click', closeMenu);
             });
         }
 
+        // --- 2. GALLERY LOGIC ---
         const gallery = document.getElementById('ship-gallery');
         const prevBtn = document.getElementById('gallery-prev');
         const nextBtn = document.getElementById('gallery-next');
 
         if (gallery && prevBtn && nextBtn) {
-            // Calculate scroll amount based on first item width
             const getScrollAmount = () => {
                 const firstItem = gallery.firstElementChild;
-                return firstItem ? firstItem.offsetWidth + 40 : 500; // 40 is the gap-10
+                return firstItem ? firstItem.offsetWidth + 40 : 500;
             };
 
             prevBtn.addEventListener('click', () => {
-                gallery.scrollBy({
-                    left: -getScrollAmount(),
-                    behavior: 'smooth'
-                });
+                gallery.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
             });
 
             nextBtn.addEventListener('click', () => {
-                gallery.scrollBy({
-                    left: getScrollAmount(),
-                    behavior: 'smooth'
-                });
+                gallery.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
             });
 
-            // Optional: Hide/Show buttons based on scroll position
             const toggleButtons = () => {
                 const scrollLeft = gallery.scrollLeft;
                 const maxScroll = gallery.scrollWidth - gallery.clientWidth;
@@ -585,10 +583,10 @@
 
             gallery.addEventListener('scroll', toggleButtons);
             window.addEventListener('resize', toggleButtons);
-            // Use a small timeout to ensure initial scroll position is captured correctly
             setTimeout(toggleButtons, 100);
         }
     });
+</script>
 </script>
 </body>
 </html>
