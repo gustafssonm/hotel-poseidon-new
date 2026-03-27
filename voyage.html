@@ -418,6 +418,73 @@
         }
     });
 </script>
+<footer class="bg-white w-full py-24 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col items-center md:flex-row md:items-center md:justify-start gap-6 mb-20">
+            <div class="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+                <img src="assets/logo.png" class="h-16 md:h-20 w-auto object-contain" />
+                <span class="font-serif italic text-2xl md:text-4xl text-primary whitespace-nowrap">Hotel Poseidon</span>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-16 mb-24">
+            <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-8">
+                <div class="space-y-4 text-on-surface-variant font-body text-base md:text-xl">
+                    <p class="flex items-center gap-4 justify-center md:justify-start"><span class="material-symbols-outlined text-secondary">location_on</span> Via Piemonte, Terracina, Italy</p>
+                    <p class="flex items-center gap-4 justify-center md:justify-start"><span class="material-symbols-outlined text-secondary">call</span> +39 0773733660</p>
+                    <p class="flex items-center gap-4 justify-center md:justify-start"><span class="material-symbols-outlined text-secondary">mail</span> hotelposeidon@libero.it</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-16 md:gap-24">
+                <div class="flex flex-col items-center md:items-start gap-6 w-full">
+                    <h4 data-i18n="footer_nav" class="font-body font-bold text-xs uppercase tracking-[0.3em] text-primary mb-2">Navigation</h4>
+                    <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary" href="index.html">The Ship</a>
+                    <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary" href="cabins.html">Cabins</a>
+                    <a class="font-body text-xs uppercase tracking-widest text-secondary font-bold" href="life.html">Terracina Life</a>
+                    <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary" href="voyage.html">Voyage</a>
+                    <div class="flex justify-center md:justify-start gap-6 pt-6 border-t border-slate-100 lg:hidden w-full">
+                        <a class="lang-link text-secondary text-sm font-bold" href="#" data-lang="en">EN</a>
+                        <a class="lang-link text-slate-400 text-sm font-bold" href="#" data-lang="it">IT</a>
+                        <a class="lang-link text-slate-400 text-sm font-bold" href="#" data-lang="se">SE</a>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center md:items-start gap-6">
+                    <h4 data-i18n="footer_legal" class="font-body font-bold text-xs uppercase tracking-[0.3em] text-primary mb-2">Legal</h4>
+                    <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary" href="privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+        <div class="pt-12 border-t border-surface-container-low text-center md:text-left">
+            <p data-i18n="footer_copyright" class="font-body text-[9px] uppercase tracking-[0.3em] text-slate-400">© 2026 HOTEL POSEIDON TERRACINA. TYRRHENIAN CURATOR.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+                mobileMenu.classList.add('pointer-events-auto');
+                document.body.style.overflow = 'hidden'; 
+            });
+
+            const closeMenu = () => {
+                mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+                mobileMenu.classList.remove('pointer-events-auto');
+                document.body.style.overflow = ''; 
+            };
+
+            if (menuClose) menuClose.addEventListener('click', closeMenu);
+            mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        }
+    });
+</script>
 <script src="src/i18n.js"></script>
 </body>
 </html>
