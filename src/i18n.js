@@ -623,6 +623,7 @@ const translations = {
 "breakfast_title": "Frukost Ingår",
 "breakfast_subtitle": "Frukostbuffé Ingår",
 "breakfast_desc": "Börja dagen med vår välkomponerade frukostbuffé, som ingår i varje vistelse. Ett urval av lokala smaker och internationella favoriter serveras dagligen i vår maritimt inspirerade matsal.",
+"breakfast_registration_note": "INGÅR I VARJE HYTTBOKNING",
 "amenities_title": "Rumskomfort",
 "amenity_wardrobe": "Garderob",
 "amenity_floor": "Kakel- eller marmorgolv",
