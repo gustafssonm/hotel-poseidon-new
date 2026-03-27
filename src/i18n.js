@@ -453,7 +453,7 @@ const translations = {
 "voyage_pompeii_title": "Pompei",
 "voyage_pompeii_desc": "Cammina tra le strade di una città preservata dal Vesuvio. Uno sguardo senza pari sulla vita romana, dove ogni affresco e ogni ciottolo racconta una storia perduta e ritrovata.",
 "voyage_curator_log": "Il <br><i class=\"italic font-normal\">Diario del Curatore</i>",
-"voyage_curator_quote": "\"Un vero viaggio non riguarda solo la destinazione, mas il rito dell'arrivo. Nel Tirreno, misuriamo il tempo dall'inclinazione del sole sull'acqua.\"",
+"voyage_curator_quote": "\"Un vero viaggio non riguarda solo la destinazione, ma il rito dell'arrivo. Nel Tirreno, misuriamo il tempo dall'inclinazione del sole sull'acqua.\"",
 "voyage_tip1_title": "L'Aliscafo del Mattino",
 "voyage_tip1_desc": "Per visitare Ponza o Capri, il primo traghetto è essenziale. Vedrai la foschia mattutina diradarsi sulle scogliere prima dell'arrivo della folla.",
 "voyage_tip2_title": "Treno vs. Autista Privato",
