@@ -365,6 +365,7 @@ const translations = {
 "breakfast_title": "Colazione Inclusa",
 "breakfast_subtitle": "Buffet della Colazione Incluso",
 "breakfast_desc": "Inizia la tua giornata con una colazione a buffet selezionata con cura, inclusa in ogni soggiorno. Una scelta di sapori locali e classici internazionali serviti ogni giorno nella nostra sala in stile nautico.",
+"breakfast_registration_note": "INCLUSO IN OGNI PRENOTAZIONE DELLA CABINA",
 "amenities_title": "Comfort in Camera",
 "amenity_wardrobe": "Armadio o guardaroba",
 "amenity_floor": "Pavimento in marmo o piastrelle",
