@@ -430,7 +430,7 @@ const translations = {
 "voyage_hero_title": "Traccia la tua <br><i class=\"italic font-normal\">Rotta</i>",
 "voyage_hero_desc": "Oltre il santuario di Terracina si estende una costa di mito e maestosità. Dalle vette vulcaniche di Ponza fino alle strade eterne di Roma.",
 "voyage_intro_title": "Una Guida Essenziale per il <br><i class=\"italic font-normal\">Viaggiatore Moderno</i>",
-"voyage_intro_desc": "Il Sud di Roma non è solo una destinazione; è un ritmo. Abbiamo curato five direzioni distinte per la vostra fuga giornaliera. Ogni percorso offre un'anima diversa: l'energia urbana di Napoli, lo chic tranquillo di Ponza, il peso imperiale di Roma, il glamour cristallino di Capri e gli echi antichi di Pompei.",
+"voyage_intro_desc": "Il Sud di Roma non è solo una destinazione; è un ritmo. Abbiamo curato cinque direzioni distinte per la vostra fuga giornaliera. Ogni percorso offre un'anima diversa: l'energia urbana di Napoli, lo chic tranquillo di Ponza, il peso imperiale di Roma, il glamour cristallino di Capri e gli echi antichi di Pompei.",
 "voyage_rome_tag": "A 1 Ora di Distanza • La Città Eterna",
 "voyage_rome_title": "Roma",
 "voyage_rome_desc": "La storia imperiale incontra l'alta moda. Un breve viaggio in treno da Monte San Biagio ti porta nel cuore dell'impero.",
