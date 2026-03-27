@@ -90,6 +90,7 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface antialiased">
+
 <!-- Top Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-white border-b border-surface-container">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
@@ -112,7 +113,7 @@
                 <a class="lang-link text-slate-400 hover:text-primary transition-colors" href="#" data-lang="se">SE</a>
             </div>
             
-            <a data-i18n="book_now" href="https://booking.ericsoft.com/BookingEngine/book.aspx?idh=7B4DD5F39E0A7797" target="_blank" rel="noopener noreferrer" class="bg-secondary text-on-secondary px-3 py-2 md:px-8 md:py-3 rounded-sm font-label font-bold uppercase tracking-tighter md:tracking-widest text-[10px] md:text-sm hover:opacity-90 transition-all duration-200 inline-block">
+            <a data-i18n="book_now" href="https://booking.ericsoft.com/BookingEngine/book.aspx?idh=7B4DD5F39E0A7797" target="_blank" rel="noopener noreferrer" class="bg-secondary text-on-secondary px-3 py-2 md:px-8 md:py-3 rounded-sm font-label font-bold uppercase tracking-widest text-[10px] md:text-sm hover:opacity-90 transition-all duration-200">
                 Book Now
             </a>
 
@@ -139,10 +140,6 @@
             <a class="lang-link text-slate-400" href="#" data-lang="it">IT</a>
             <a class="lang-link text-slate-400" href="#" data-lang="se">SE</a>
         </div>
-
-        <a data-i18n="book_now" href="https://booking.ericsoft.com/BookingEngine/book.aspx?idh=7B4DD5F39E0A7797" target="_blank" rel="noopener noreferrer" class="mt-8 bg-secondary text-on-secondary px-12 py-4 rounded-sm font-label font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-all duration-200">
-            Book Now
-        </a>
     </div>
 </nav>
 
@@ -223,7 +220,7 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-5 md:order-2 relative">
                     <div class="aspect-[3/4] overflow-hidden rounded-sm">
-                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdga0J9mTh-WrDCMYW6YN8GLJHVs57j9_ORu9HT8AseUXVGPpgNJsd4eA-CCefD7O1aVHnEhzyq6axT4mE74GJTjN80UUucOEuWUUZkyqoxpT71bPKF856yXKhD724umIr8tejY24tRhTRGBJYdwUrvfYhTWuEnzO4z6GoDsnK0XO8BpoCrCTbAgww24WxVpZ8Une7vOTLqBwxvUsT3ycMCgoFnmuotIs2HQbQMRrTxrqeg905lEiDnp5XBNXaOMB0Bn8vVELHdjQ" alt="Ponza">
+                        <img class="w-full h-full object-cover" src="assets/voyage-ponza.png" alt="Ponza">
                     </div>
                     <div class="absolute -bottom-12 -right-12 bg-primary p-12 hidden lg:block editorial-shadow">
                         <span class="text-white font-headline text-5xl italic">02</span>
@@ -235,9 +232,9 @@
                     <p data-i18n="voyage_ponza_desc" class="text-xl text-on-surface-variant font-body leading-relaxed mb-12"> The Roman's best-kept secret.</p>
                 </div>
             </div>
-            
-            <!-- Other Destinations (Capri, Naples, Pompeii Placeholder blocks) -->
-             <div class="relative">
+
+            <!-- Capri -->
+            <div class="relative">
                 <div class="grid grid-cols-1 md:grid-cols-12">
                     <div class="md:col-span-8 relative">
                         <div class="aspect-video overflow-hidden rounded-sm">
@@ -253,6 +250,8 @@
                     <p data-i18n="voyage_capri_desc" class="text-on-surface-variant font-body">A short hydrofoil ride brings you to glamour.</p>
                 </div>
             </div>
+
+            <!-- Naples -->
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-5 md:order-2 relative">
                     <div class="aspect-[3/4] overflow-hidden rounded-sm">
@@ -269,6 +268,7 @@
                 </div>
             </div>
 
+            <!-- Pompeii -->
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-7 relative">
                     <div class="aspect-[16/9] overflow-hidden rounded-sm">
@@ -287,12 +287,51 @@
         </div>
     </section>
 
+    <!-- Curator's Log Section -->
+    <section class="py-32 bg-primary text-white px-6 md:px-12">
+        <div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+            <div class="lg:col-span-4">
+                <h2 data-i18n="voyage_curator_log_title" class="text-5xl font-headline leading-tight mb-12">The <br><i class="italic font-normal">Curator’s Log</i></h2>
+                <div class="space-y-8">
+                    <div class="border-l-2 border-secondary pl-8">
+                        <p data-i18n="voyage_curator_quote" class="text-xl italic font-headline leading-relaxed text-slate-200">
+                            "A true voyage is not just about the destination, but the ritual of arrival. In the Tyrrhenian, we measure time by the sun's angle on the water."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+                <div class="space-y-6">
+                    <span class="text-6xl font-headline text-secondary/30 block">01</span>
+                    <h4 data-i18n="voyage_tip1_title" class="font-label font-bold uppercase tracking-widest text-xs text-secondary">The Early Hydrofoil</h4>
+                    <p data-i18n="voyage_tip1_desc" class="text-slate-300 leading-relaxed font-body">When visiting Ponza or Capri, the first ferry out is essential.</p>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-6xl font-headline text-secondary/30 block">02</span>
+                    <h4 data-i18n="voyage_tip2_title" class="font-label font-bold uppercase tracking-widest text-xs text-secondary">Train vs. Private Driver</h4>
+                    <p data-i18n="voyage_tip2_desc" class="text-slate-300 leading-relaxed font-body">Rome is exactly 60 minutes via the fast train from Monte San Biagio.</p>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-6xl font-headline text-secondary/30 block">03</span>
+                    <h4 data-i18n="voyage_tip3_title" class="font-label font-bold uppercase tracking-widest text-xs text-secondary">Sartorial Guidance</h4>
+                    <p data-i18n="voyage_tip3_desc" class="text-slate-300 leading-relaxed font-body">Linen is your ally. Keep it light, neutral, and effortlessly chic.</p>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-6xl font-headline text-secondary/30 block">04</span>
+                    <h4 data-i18n="voyage_tip4_title" class="font-label font-bold uppercase tracking-widest text-xs text-secondary">The Golden Hour Rule</h4>
+                    <p data-i18n="voyage_tip4_desc" class="text-slate-300 leading-relaxed font-body">Watching the sun dip behind the Temple of Jupiter Anxur is the ultimate 'welcome home'.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Signal the Bridge Form -->
     <section class="py-48 bg-surface px-6 md:px-12">
         <div class="max-w-screen-2xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
                 <div class="lg:col-span-5">
-                    <h2 class="text-6xl md:text-8xl font-headline mb-10 text-primary leading-tight">Signal the <br><i class="italic font-normal">Bridge</i></h2>
+                    <h2 data-i18n="voyage_signal_title" class="text-6xl md:text-8xl font-headline mb-10 text-primary leading-tight">Signal the <br><i class="italic font-normal">Bridge</i></h2>
+                    <p data-i18n="voyage_signal_desc" class="text-2xl text-on-surface-variant mb-16 leading-relaxed max-w-lg">Whether you're planning a summer escape or a coastal event, our crew is ready to assist your voyage.</p>
                     <div class="space-y-10">
                         <div class="flex items-center gap-8">
                             <span class="material-symbols-outlined text-secondary text-4xl">call</span>
@@ -307,17 +346,17 @@
                 <div class="lg:col-span-7 bg-primary p-16 md:p-24 rounded-sm text-white editorial-shadow relative overflow-hidden">
                     <div id="form-success" class="hidden absolute inset-0 bg-primary z-20 flex flex-col items-center justify-center text-center p-12">
                         <span class="material-symbols-outlined text-secondary text-7xl mb-8">check_circle</span>
-                        <h3 class="text-4xl font-headline mb-6">Signal Received</h3>
-                        <button onclick="document.getElementById('form-success').classList.add('hidden')" class="mt-12 text-xs uppercase tracking-widest font-bold text-secondary">Send another</button>
+                        <h3 data-i18n="voyage_form_success_title" class="text-4xl font-headline mb-6">Signal Received</h3>
+                        <button data-i18n="voyage_form_success_btn" onclick="document.getElementById('form-success').classList.add('hidden')" class="mt-12 text-xs uppercase tracking-widest font-bold text-secondary">Send another</button>
                     </div>
                     <form id="contact-form" action="https://formspree.io/f/hotelposeidon@libero.it" method="POST" class="space-y-12">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                            <input name="first_name" required class="w-full bg-transparent border-b border-white/20 py-4 text-white" type="text" placeholder="First Name">
-                            <input name="last_name" required class="w-full bg-transparent border-b border-white/20 py-4 text-white" type="text" placeholder="Last Name">
+                            <input name="first_name" required class="w-full bg-transparent border-b border-white/20 py-4 text-white" type="text" placeholder="First Name" data-i18n-placeholder="voyage_form_fname_placeholder">
+                            <input name="last_name" required class="w-full bg-transparent border-b border-white/20 py-4 text-white" type="text" placeholder="Last Name" data-i18n-placeholder="voyage_form_lname_placeholder">
                         </div>
-                        <input name="email" required class="w-full bg-transparent border-b border-white/20 py-4 text-white" type="email" placeholder="Email">
-                        <textarea name="message" required class="w-full bg-transparent border-b border-white/20 py-4 text-white min-h-[160px]" placeholder="Message"></textarea>
-                        <button type="submit" class="w-full bg-secondary text-white py-6 font-bold uppercase tracking-widest">Send Signal</button>
+                        <input name="email" required class="w-full bg-transparent border-b border-white/20 py-4 text-white" type="email" placeholder="Email" data-i18n-placeholder="voyage_form_email_placeholder">
+                        <textarea name="message" required class="w-full bg-transparent border-b border-white/20 py-4 text-white min-h-[160px]" placeholder="Message" data-i18n-placeholder="voyage_form_msg_placeholder"></textarea>
+                        <button data-i18n="voyage_form_submit" type="submit" class="w-full bg-secondary text-white py-6 font-bold uppercase tracking-widest">Send Signal</button>
                     </form>
                 </div>
             </div>
@@ -326,47 +365,9 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-white w-full py-24 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col items-center md:flex-row md:items-center md:justify-start gap-6 mb-20">
-            <div class="flex flex-col items-center gap-2 md:flex-row md:gap-4">
-                <img src="assets/logo.png" class="h-16 md:h-20 w-auto object-contain" />
-                <span class="font-serif italic text-2xl md:text-4xl text-primary whitespace-nowrap">Hotel Poseidon</span>
-            </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-16 mb-24">
-            <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-8">
-                <div class="space-y-4 text-on-surface-variant font-body text-base md:text-xl">
-                    <p class="flex items-center gap-4 justify-center md:justify-start"><span class="material-symbols-outlined text-secondary">location_on</span> Via Piemonte, Terracina, Italy</p>
-                    <p class="flex items-center gap-4 justify-center md:justify-start"><span class="material-symbols-outlined text-secondary">call</span> +39 0773733660</p>
-                    <p class="flex items-center gap-4 justify-center md:justify-start"><span class="material-symbols-outlined text-secondary">mail</span> hotelposeidon@libero.it</p>
-                </div>
-            </div>
-            
-            <div class="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-16 md:gap-24">
-                <div class="flex flex-col items-center md:items-start gap-6 w-full">
-                    <h4 data-i18n="footer_nav" class="font-body font-bold text-xs uppercase tracking-[0.3em] text-primary mb-2">Navigation</h4>
-                    <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary" href="index.html">The Ship</a>
-                    <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary" href="cabins.html">Cabins</a>
-                    <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary" href="life.html">Terracina Life</a>
-                    <a class="font-body text-xs uppercase tracking-widest text-secondary font-bold" href="voyage.html">Voyage</a>
-                    
-                    <div class="flex justify-center md:justify-start gap-6 pt-6 border-t border-slate-100 lg:hidden w-full">
-                        <a class="lang-link text-secondary text-sm font-bold" href="#" data-lang="en">EN</a>
-                        <a class="lang-link text-slate-400 text-sm font-bold" href="#" data-lang="it">IT</a>
-                        <a class="lang-link text-slate-400 text-sm font-bold" href="#" data-lang="se">SE</a>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center md:items-start gap-6">
-                    <h4 data-i18n="footer_legal" class="font-body font-bold text-xs uppercase tracking-[0.3em] text-primary mb-2">Legal</h4>
-                    <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-secondary" href="privacy.html">Privacy</a>
-                </div>
-            </div>
-        </div>
-        <div class="pt-12 border-t border-surface-container-low text-center md:text-left">
-            <p data-i18n="footer_copyright" class="font-body text-[9px] uppercase tracking-[0.3em] text-slate-400">© 2026 HOTEL POSEIDON TERRACINA. TYRRHENIAN CURATOR.</p>
-        </div>
+<footer class="bg-white w-full py-24 px-6 md:px-12 border-t border-surface-container">
+    <div class="max-w-7xl mx-auto text-center md:text-left">
+        <p data-i18n="footer_rights" class="font-body text-[9px] uppercase tracking-[0.3em] text-slate-400">© 2026 HOTEL POSEIDON TERRACINA. TYRRHENIAN CURATOR.</p>
     </div>
 </footer>
 
