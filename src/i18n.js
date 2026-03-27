@@ -107,6 +107,7 @@ const translations = {
 "breakfast_title": "Complimentary Breakfast",
 "breakfast_subtitle": "Free Buffet Breakfast",
 "breakfast_desc": "Start your voyage with our curated buffet breakfast, included with every stay. A selection of local flavors and international favorites served daily in our nautical dining hall.",
+"breakfast_registration_note": "INCLUDED WITH EVERY CABIN REGISTRATION",
 "amenities_title": "Room Comforts",
 "amenity_wardrobe": "Wardrobe or closet",
 "amenity_floor": "Tile/Marble flooring",
