@@ -427,31 +427,70 @@
     </div>
 </footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
+<script src="src/i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. DYNAMIC BOOKING LINK LOGIC (Local Time Version) ---
+            const updateBookingLinks = () => {
+                const bookButtons = document.querySelectorAll('a[data-i18n="book_now"]');
+                const now = new Date();
+                
+                // Create strings for local YYYY-MM-DD to avoid timezone jumps
+                const offset = now.getTimezoneOffset() * 60000;
+                const localISOTime = new Date(now - offset).toISOString();
+                const todayStr = localISOTime.split('T')[0];
+                
+                const today = new Date(todayStr);
+                const openingDate = new Date('2026-04-24');
+                
+                let arrival;
+                let departure;
 
-        if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
-                mobileMenu.classList.add('pointer-events-auto');
-                document.body.style.overflow = 'hidden'; 
-            });
+                if (today < openingDate) {
+                    arrival = '2026-04-24';
+                    departure = '2026-04-26';
+                } else {
+                    arrival = todayStr;
+                    const dateOut = new Date(now - offset);
+                    dateOut.setDate(dateOut.getDate() + 2);
+                    departure = dateOut.toISOString().split('T')[0];
+                }
 
-            const closeMenu = () => {
-                mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
-                mobileMenu.classList.remove('pointer-events-auto');
-                document.body.style.overflow = ''; 
+                const newUrl = `https://booking.ericsoft.com/en/BookingEngine/Book?idh=7B4DD5F39E0A7797&arrival=${arrival}&departure=${departure}&cur=EUR&guests=2280_2280`;
+
+                bookButtons.forEach(btn => {
+                    btn.href = newUrl;
+                });
             };
 
-            if (menuClose) menuClose.addEventListener('click', closeMenu);
-            mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-        }
-    });
-</script>
-<script src="src/i18n.js"></script>
+            updateBookingLinks();
+
+            // --- 2. MOBILE MENU LOGIC ---
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const body = document.body;
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+                    mobileMenu.classList.add('pointer-events-auto');
+                    body.style.overflow = 'hidden';
+                });
+
+                const closeMenu = () => {
+                    mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+                    mobileMenu.classList.remove('pointer-events-auto');
+                    body.style.overflow = '';
+                };
+
+                if (menuClose) menuClose.addEventListener('click', closeMenu);
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
