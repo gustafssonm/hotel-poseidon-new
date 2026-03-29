@@ -388,13 +388,20 @@
         </div>
     </div>
 </footer>
-<script src="src/i18n.js"></script>
+    <script src="src/i18n.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- 1. DYNAMIC BOOKING LINK LOGIC ---
+            // --- 1. DYNAMIC BOOKING LINK LOGIC (Local Time Version) ---
             const updateBookingLinks = () => {
                 const bookButtons = document.querySelectorAll('a[data-i18n="book_now"]');
-                const today = new Date();
+                const now = new Date();
+                
+                // Create strings for local YYYY-MM-DD
+                const offset = now.getTimezoneOffset() * 60000;
+                const localISOTime = new Date(now - offset).toISOString();
+                const todayStr = localISOTime.split('T')[0];
+                
+                const today = new Date(todayStr);
                 const openingDate = new Date('2026-04-24');
                 
                 let arrival;
@@ -404,9 +411,9 @@
                     arrival = '2026-04-24';
                     departure = '2026-04-26';
                 } else {
-                    const dateOut = new Date(today);
-                    dateOut.setDate(today.getDate() + 2);
-                    arrival = today.toISOString().split('T')[0];
+                    arrival = todayStr;
+                    const dateOut = new Date(now - offset);
+                    dateOut.setDate(dateOut.getDate() + 2);
                     departure = dateOut.toISOString().split('T')[0];
                 }
 
@@ -436,7 +443,14 @@
                     mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
                     mobileMenu.classList.remove('pointer-events-auto');
                     body.style.overflow = '';
-              });
+                };
+
+                if (menuClose) menuClose.addEventListener('click', closeMenu);
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
+        });
     </script>
 </body>
 </html>
