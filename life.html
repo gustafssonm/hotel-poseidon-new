@@ -391,16 +391,13 @@
     <script src="src/i18n.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- 1. DYNAMIC BOOKING LINK LOGIC (Local Time Version) ---
+            // --- 1. DYNAMIC BOOKING LINK LOGIC ---
             const updateBookingLinks = () => {
                 const bookButtons = document.querySelectorAll('a[data-i18n="book_now"]');
                 const now = new Date();
-                
-                // Create strings for local YYYY-MM-DD
                 const offset = now.getTimezoneOffset() * 60000;
                 const localISOTime = new Date(now - offset).toISOString();
                 const todayStr = localISOTime.split('T')[0];
-                
                 const today = new Date(todayStr);
                 const openingDate = new Date('2026-04-24');
                 
@@ -433,18 +430,26 @@
             const body = document.body;
 
             if (menuToggle && mobileMenu) {
-                menuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
-                    mobileMenu.classList.add('pointer-events-auto');
-                    body.style.overflow = 'hidden';
-
+                // Function to close the menu
                 const closeMenu = () => {
                     mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
                     mobileMenu.classList.remove('pointer-events-auto');
                     body.style.overflow = '';
                 };
 
-                if (menuClose) menuClose.addEventListener('click', closeMenu);
+                // Open menu
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+                    mobileMenu.classList.add('pointer-events-auto');
+                    body.style.overflow = 'hidden';
+                });
+
+                // Close menu via X button
+                if (menuClose) {
+                    menuClose.addEventListener('click', closeMenu);
+                }
+
+                // Close menu when clicking any link
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', closeMenu);
                 });
@@ -453,5 +458,4 @@
     </script>
 </body>
 </html>
-
            
