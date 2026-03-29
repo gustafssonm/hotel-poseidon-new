@@ -641,117 +641,133 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- 1. MOBILE MENU LOGIC (The part you were missing) ---
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const body = document.body;
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. DYNAMIC BOOKING LINK LOGIC ---
+            const updateBookingLinks = () => {
+                const bookButtons = document.querySelectorAll('a[data-i18n="book_now"]');
+                const today = new Date();
+                const openingDate = new Date('2026-04-24');
+                
+                let arrival;
+                let departure;
 
-        if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener('click', () => {
-                // This makes the menu slide in and becomes clickable
-                mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
-                mobileMenu.classList.add('pointer-events-auto');
-                body.style.overflow = 'hidden'; 
-            });
+                if (today < openingDate) {
+                    arrival = '2026-04-24';
+                    departure = '2026-04-26';
+                } else {
+                    const dateOut = new Date(today);
+                    dateOut.setDate(today.getDate() + 2);
+                    arrival = today.toISOString().split('T')[0];
+                    departure = dateOut.toISOString().split('T')[0];
+                }
 
-            const closeMenu = () => {
-                // This makes the menu slide out and stops it from blocking clicks
-                mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
-                mobileMenu.classList.remove('pointer-events-auto');
-                body.style.overflow = ''; 
+                const newUrl = `https://booking.ericsoft.com/en/BookingEngine/Book?idh=7B4DD5F39E0A7797&arrival=${arrival}&departure=${departure}&cur=EUR&guests=2280_2280`;
+
+                bookButtons.forEach(btn => {
+                    btn.href = newUrl;
+                });
             };
 
-            if (menuClose) menuClose.addEventListener('click', closeMenu);
-            
-            // Close menu if a link inside it is clicked
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', closeMenu);
+            updateBookingLinks();
+
+            // --- 2. MOBILE MENU LOGIC ---
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const body = document.body;
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+                    mobileMenu.classList.add('pointer-events-auto');
+                    body.style.overflow = 'hidden';
+                });
+
+                const closeMenu = () => {
+                    mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+                    mobileMenu.classList.remove('pointer-events-auto');
+                    body.style.overflow = '';
+                };
+
+                if (menuClose) menuClose.addEventListener('click', closeMenu);
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
+
+            // --- 3. LIGHTBOX LOGIC (Keeping your photos working) ---
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.getElementById('close-lightbox');
+            const prevBtn = document.getElementById('prev-lightbox');
+            const nextBtn = document.getElementById('next-lightbox');
+            let currentGallery = [];
+            let currentIndex = 0;
+
+            const openLightbox = (index, gallery) => {
+                currentGallery = gallery;
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.remove('hidden');
+                setTimeout(() => lightbox.classList.add('opacity-100'), 10);
+                body.style.overflow = 'hidden';
+            };
+
+            const updateLightbox = () => {
+                lightboxImg.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    lightboxImg.src = currentGallery[currentIndex];
+                    lightboxImg.style.transform = 'scale(1)';
+                }, 150);
+            };
+
+            const nextImage = () => {
+                currentIndex = (currentIndex + 1) % currentGallery.length;
+                updateLightbox();
+            };
+
+            const prevImage = () => {
+                currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                updateLightbox();
+            };
+
+            document.querySelectorAll('.gallery-trigger').forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    const group = trigger.closest('[data-gallery-group]');
+                    const index = parseInt(trigger.getAttribute('data-index')) || 0;
+                    let gallery = [];
+                    if (group) {
+                        gallery = Array.from(group.querySelectorAll('img')).map(img => img.src);
+                    } else {
+                        gallery = [trigger.src || trigger.querySelector('img')?.src];
+                    }
+                    if (gallery.length > 0) openLightbox(index, gallery);
+                });
             });
-        }
 
-        // --- 2. LIGHTBOX LOGIC (Keeping your photos working) ---
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.getElementById('close-lightbox');
-        const prevBtn = document.getElementById('prev-lightbox');
-        const nextBtn = document.getElementById('next-lightbox');
+            if (closeBtn) closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('opacity-100');
+                setTimeout(() => {
+                    lightbox.classList.add('hidden');
+                    body.style.overflow = '';
+                }, 300);
+            });
 
-        let currentGallery = [];
-        let currentIndex = 0;
+            if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+            if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
 
-        const openLightbox = (index, gallery) => {
-            currentGallery = gallery;
-            currentIndex = index;
-            updateLightbox();
-            lightbox.classList.remove('hidden');
-            setTimeout(() => lightbox.classList.add('opacity-100'), 10);
-            body.style.overflow = 'hidden';
-        };
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target === lightboxImg) closeBtn.click();
+            });
 
-        const updateLightbox = () => {
-            lightboxImg.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                lightboxImg.src = currentGallery[currentIndex];
-                lightboxImg.style.transform = 'scale(1)';
-            }, 150);
-        };
-
-        const nextImage = () => {
-            currentIndex = (currentIndex + 1) % currentGallery.length;
-            updateLightbox();
-        };
-
-        const prevImage = () => {
-            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-            updateLightbox();
-        };
-
-        document.querySelectorAll('.gallery-trigger').forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
-                const group = trigger.closest('[data-gallery-group]');
-                const index = parseInt(trigger.getAttribute('data-index')) || 0;
-                let gallery = [];
-                if (group) {
-                    gallery = Array.from(group.querySelectorAll('img')).map(img => img.src);
-                } else {
-                    gallery = [trigger.src || trigger.querySelector('img')?.src];
-                }
-                if (gallery.length > 0) openLightbox(index, gallery);
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('hidden')) return;
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeBtn.click();
             });
         });
-
-        if (closeBtn) closeBtn.addEventListener('click', () => {
-            lightbox.classList.remove('opacity-100');
-            setTimeout(() => {
-                lightbox.classList.add('hidden');
-                body.style.overflow = '';
-            }, 300);
-        });
-
-        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
-        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox || e.target === lightboxImg) closeBtn.click();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.classList.contains('hidden')) return;
-            if (e.key === 'ArrowRight') nextImage();
-            if (e.key === 'ArrowLeft') prevImage();
-            if (e.key === 'Escape') closeBtn.click();
-        });
-
-        let touchStartX = 0;
-        lightbox.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
-        lightbox.addEventListener('touchend', e => {
-            const touchEndX = e.changedTouches[0].screenX;
-            if (touchStartX - touchEndX > 50) nextImage();
-            if (touchEndX - touchStartX > 50) prevImage();
-        });
-    });
 </script>
  
 <script src="src/i18n.js"></script>
