@@ -436,14 +436,7 @@
                     mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
                     mobileMenu.classList.remove('pointer-events-auto');
                     body.style.overflow = '';
-                };
-
-                if (menuClose) menuClose.addEventListener('click', closeMenu);
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', closeMenu);
-                });
-            }
-        });
+              });
     </script>
 </body>
 </html>
