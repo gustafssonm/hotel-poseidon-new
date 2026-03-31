@@ -627,6 +627,16 @@
             const toggleButtons = () => {
                 const scrollLeft = gallery.scrollLeft;
                 const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+                const swipeHint = document.getElementById('mobile-swipe-hint');
+                if (swipeHint) {
+                    if (scrollLeft > 50) {
+                        swipeHint.style.opacity = '0';
+                        swipeHint.style.transform = 'translateX(20px)';
+                    } else {
+                        swipeHint.style.opacity = '1';
+                        swipeHint.style.transform = 'translateX(0)';
+                    }
+                }
                 const scrollPercentage = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
                 
                 const progressBar = document.getElementById('gallery-progress');
