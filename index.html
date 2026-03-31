@@ -159,7 +159,11 @@
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <img alt="Hotel Poseidon pool area" data-i18n="alt_hero" fetchpriority="high" class="w-full h-full object-cover saturate-110" src="assets/hotel-hero.jpg" referrerPolicy="no-referrer"/>
+        <picture>
+            <source media="(max-width: 767px)" srcset="assets/hero-vertical.jpg">
+            
+            <img alt="Hotel Poseidon pool area" data-i18n="alt_hero" fetchpriority="high" class="w-full h-full object-cover saturate-110" src="assets/hotel-hero.jpg" referrerPolicy="no-referrer"/>
+        </picture>
         <div class="absolute inset-0 bg-black/30"></div>
     </div>
     
