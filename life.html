@@ -419,7 +419,59 @@
         </div>
     </div>
 </footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. MOBILE MENU LOGIC ---
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const body = document.body;
 
-<script src="src/i18n.js"></script>
+            // This part makes the "Hamburger" click work
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+                    mobileMenu.classList.add('pointer-events-auto');
+                    body.style.overflow = 'hidden'; // Prevents scrolling behind the menu
+                });
+
+                const closeMenu = () => {
+                    mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+                    mobileMenu.classList.remove('pointer-events-auto');
+                    body.style.overflow = ''; // Allows scrolling again
+                };
+
+                if (menuClose) menuClose.addEventListener('click', closeMenu);
+                
+                // Also close menu if someone clicks a link inside it
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
+
+            // --- 2. DYNAMIC BOOKING LINK LOGIC ---
+            const updateBookingLinks = () => {
+                const bookButtons = document.querySelectorAll('a[data-i18n="book_now"]');
+                const today = new Date();
+                const openingDate = new Date('2026-04-24');
+                let arrival, departure;
+
+                if (today < openingDate) {
+                    arrival = '2026-04-24';
+                    departure = '2026-04-26';
+                } else {
+                    const dateOut = new Date(today);
+                    dateOut.setDate(today.getDate() + 2);
+                    arrival = today.toISOString().split('T')[0];
+                    departure = dateOut.toISOString().split('T')[0];
+                }
+
+                const newUrl = `https://booking.ericsoft.com/en/BookingEngine/Book?idh=7B4DD5F39E0A7797&arrival=${arrival}&departure=${departure}&cur=EUR&guests=2280_2280`;
+                bookButtons.forEach(btn => btn.href = newUrl);
+            };
+            updateBookingLinks();
+        });
+    </script>
+    <script src="src/i18n.js"></script>
 </body>
 </html>
