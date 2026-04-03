@@ -802,7 +802,7 @@ const translations = {
 "footer_address": "<span class=\"material-symbols-outlined text-secondary text-xl md:text-2xl\">location_on</span> Via Piemonte, Terracina, Italien",
 "footer_phone": "<span class=\"material-symbols-outlined text-secondary text-xl md:text-2xl\">call</span> +39 0773733660",
 "footer_email": "<span class=\"material-symbols-outlined text-secondary text-xl md:text-2xl\">mail</span> hotelposeidon@libero.it",
-"alt_logo": "Hotel Poseidon Logotyp",
+"alt_logo": "Hotel Poseidon - Terracina",
 "alt_voyage_hero": "Flygvy över Tyrrenska havet",
 "alt_voyage_intro": "Kustscen",
 "alt_rome": "Rom",
