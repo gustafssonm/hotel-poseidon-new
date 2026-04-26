@@ -140,7 +140,7 @@ const translations = {
 "stat_rooms_val": "48",
 "stat_rooms_label": "Boutique Rooms",
 "stat_service_val": "24h",
-"stat_service_label": "Deck Service",
+"stat_service_label": "On-board Reception",
 "stat_heritage_val": "2001",
 "stat_heritage_label": "Nautical Debut",
 "journey_title": "The Guest Journey",
