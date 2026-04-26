@@ -699,7 +699,7 @@ const translations = {
 "stat_rooms_val": "48",
 "stat_rooms_label": "Boutique-rum",
 "stat_service_val": "24h",
-"stat_service_label": "Däckservice",
+"stat_service_label": "Reception ombord",
 "stat_heritage_val": "2001",
 "stat_heritage_label": "Nautisk Debut",
 "journey_title": "Gästens Resa",
