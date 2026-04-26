@@ -416,7 +416,7 @@ const translations = {
 "stat_rooms_val": "48",
 "stat_rooms_label": "Camere Boutique",
 "stat_service_val": "24h",
-"stat_service_label": "Servizio di Bordo",
+"stat_service_label": "Comando di Bordo",
 "stat_heritage_val": "2001",
 "stat_heritage_label": "Debutto Nautico",
 "journey_title": "Il Viaggio dell'Ospite",
