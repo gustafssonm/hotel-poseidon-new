@@ -569,7 +569,7 @@ const translations = {
 "hero_desc": "Beläget bara 50 meter från havet där pulserande modernism möter vågornas tidlösa rytm.",
 "opening_weekends_label": "Din Sommar Börjar Här",
 "opening_title": "Upplev hjärtat av sommaren i Terracina",
-"opening_weekends_date": "Begränsad tillgänglighet för juni och juli.",
+"opening_weekends_date": "Begränsad tillgänglighet för juli.",
 "opening_daily_date": "Säkra din plats i solen nu.",
 "arch_title": "Det Nautiska Skrovet",
 "arch_desc": "Ett arkitektoniskt mästerverk, skapat för att likna en elegant kryssare som reser sig ur Terracinas sand.",
