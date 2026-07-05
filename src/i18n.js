@@ -286,7 +286,7 @@ const translations = {
 "hero_desc": "A soli 50 metri dal mare, dove un modernismo vibrante incontra il ritmo senza tempo delle onde.",
 "opening_weekends_label": "La Tua Estate Inizia Qui",
 "opening_title": "Vivi il cuore dell'estate a Terracina",
-"opening_weekends_date": "Disponibilità limitata per Giugno e Luglio.",
+"opening_weekends_date": "Disponibilità limitata per Luglio.",
 "opening_daily_date": "Assicura ora il tuo posto al sole.",
 "arch_title": "Il Profilo Nautico",
 "arch_desc": "Un capolavoro architettonico pensato per richiamare un incrociatore di design che emerge dalle sabbie di Terracina.",
