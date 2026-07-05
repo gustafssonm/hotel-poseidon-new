@@ -10,7 +10,7 @@ const translations = {
 "hero_desc": "Located just 50 meters from the sea where high-energy modernism meets the timeless rhythm of the waves.",
 "opening_weekends_label": "Your Summer Starts Here",
 "opening_title": "Live the heart of summer in Terracina",
-"opening_weekends_date": "Limited availability for June and July.",
+"opening_weekends_date": "Limited availability for July.",
 "opening_daily_date": "Secure your place in the sun now.",
 "arch_title": "The Nautical Shell",
 "arch_desc": "A structural masterpiece crafted to mirror a designer cruiser emerging from the Terracina sands.",
